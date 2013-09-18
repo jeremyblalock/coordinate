@@ -27,12 +27,32 @@
     $.fn.coordinate = function(type) {
         var id = $.coordinate.indentifier(),
             className = ['coordinate', type, id].join('-');
-        console.log('========>', $(this));
-        $(this).addClass(className);
+        //console.log('========>', $(this).get(0), $(this).get(1));
+        addClassSVGSafe($(this), className);
     };
 
     /* The core functionality or coordinate */
     var coordinationTypes = {'hover': ['mouseenter', 'mouseleave']};
+
+    function addClassSVGSafe($el, className) {
+        $el.each(function() {
+            if ($(this).get(0).classList) {
+                $(this).get(0).classList.add(className);
+            } else {
+                $(this).addClass(className);
+            }
+        });
+    }
+
+    function removeClassSVGSafe($el, className) {
+        $el.each(function() {
+            if ($(this).get(0).classList) {
+                $(this).get(0).classList.remove(className);
+            } else {
+                $(this).removeClass(className);
+            }
+        });
+    }
 
     function getAppropriateClassNames($el, prefix) {
         var classList = $el.attr('class').split(/\s+/),
@@ -56,9 +76,9 @@
                     $.extend($obj, $('.' + className));
                 });
                 if (i === 0) {
-                    $obj.addClass('coordinate-' + type);
+                    addClassSVGSafe($obj, 'coordinate-' + type);
                 } else {
-                    $obj.removeClass('coordinate-' + type);
+                    removeClassSVGSafe($obj, 'coordinate-' + type);
                 }
             });
         });

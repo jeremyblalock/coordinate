@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coordinate.js Demo</title>
+<script src="lib/jquery.min.js"></script>
+<script src='../coordinate.js'></script>
+<style>
+
+body {
+  font-family: 'Helvetica', arial, sans-serif;
+  width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+.links {
+  padding: 30px 0
+}
+.links a {
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px solid #555;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+a.coordinate-hover {
+  background: #aaa;
+}
+circle {
+  fill: #fff;
+  stroke: #000;
+  cursor: pointer;
+}
+circle.coordinate-hover {
+  fill: #aaa;
+}
+text {
+  pointer-events: none;
+}
+
+</style>
+</head>
+<body>
+  <div class='links'>
+    <a id='link-1' href='#' class='coordinate-hover-1'>Circle 1</a>
+    <a id='link-1' href='#' class='coordinate-hover-2'>Circle 2</a>
+    <a id='link-1' href='#' class='coordinate-hover-3'>Circle 3</a><br>
+  </div>
+  Hover a link above or a circle below, to see the effect...<br>
+  <svg xmlns='http://www.w3.org/2000/svg' width='450' height='150'>
+    <circle r='50' cx='75' cy='75' class='coordinate-hover-1'/>
+    <circle r='50' cx='225' cy='75' class='coordinate-hover-2'/>
+    <circle r='50' cx='375' cy='75' class='coordinate-hover-3'/>
+    <g class='labels'>
+      <text x='75' y='80' text-anchor='middle'>1</text>
+      <text x='225' y='80' text-anchor='middle'>2</text>
+      <text x='375' y='80' text-anchor='middle'>3</text>
+    </g>
+  </svg>
+</body>
+</html>
