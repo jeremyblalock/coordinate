@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coordinate.js Demo</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src='../coordinate.js'></script>
+<script>
+  $(document).ready(function() {
+    $('a').coordinate('hover');
+  });
+</script>
+<style>
+a.coordinate-hover {
+  background: #ddd;
+}
+</style>
+</head>
+<body>
+  <a id='link-1' href='#'>Link 1</a><br>
+  Some text in between...<br>
+  <a id='link-2' href='#'>Link 2</a>
+</body>
+</html>
