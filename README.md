@@ -3,6 +3,8 @@ Coordinate
 
 Simple jQuery plugin for facilitating mouse-hover coordination between objects on a page.
 
+[See live example](http://bl.ocks.org/jeremyblalock/6604511)
+
 ## Functions
 
 ### Coordination types
