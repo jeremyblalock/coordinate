@@ -69,7 +69,7 @@
         var eventNames = coordinationTypes[type],
             prefix = 'coordinate-' + type + '-';
         $.each(eventNames, function(i, eventName) {
-            $(document).on(eventName, '[class^="coordinate-' + type + '-"]', function() {
+            $(document).on(eventName, '[class*="coordinate-' + type + '-"]', function() {
                 var classNames = getAppropriateClassNames($(this), prefix),
                     $obj = [];
                 $.each(classNames, function(dc, className) {
